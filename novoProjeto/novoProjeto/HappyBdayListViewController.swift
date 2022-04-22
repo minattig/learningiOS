@@ -7,9 +7,10 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+class HappyBdayListViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+
     @IBOutlet var event: UILabel!
     @IBOutlet var name: UITextField!
     
@@ -28,7 +29,7 @@ class TableViewController: UIViewController {
     }
 }
 
-extension TableViewController: UITableViewDataSource {
+extension HappyBdayListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

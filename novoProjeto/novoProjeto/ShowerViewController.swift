@@ -9,21 +9,23 @@ import UIKit
 
 class ShowerViewController: UIViewController {
 
+    var text: String?
+    
+    @IBOutlet weak var show: UILabel!
+    
+//    var show:String?
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+//        super.viewDidLoad()
+        
+          
+//          show.text = text
+        
+        if let receivedText = text {
+            show.text = receivedText
+        }
 
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

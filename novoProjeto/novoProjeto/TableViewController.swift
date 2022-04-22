@@ -9,21 +9,63 @@ import UIKit
 
 class TableViewController: UIViewController {
 
+    var receiveText: String?
+
+    @IBOutlet var tableView: UITableView!
+    
+    let names = [
+                "Minatti",
+                "Thay",
+                "Laura",
+                "Age"
+                ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        let selectName = segue.destination as! ShowerViewController
+        
+          
+          selectName.text = receiveText
+        
+//        if let newText = receiveText {
+//            selectName.text = newText
+//        }
+        
+        
     }
-    */
+    
+}
 
+extension TableViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return names.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath) as? NameTableTableViewCell
+        
+        cell?.nameLabel?.text = names[indexPath.row]
+        
+        return cell ?? UITableViewCell()
+    }
+
+
+}
+
+extension TableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        receiveText = names[indexPath.row]
+//        print(names[indexPath.row])
+    }
+    
+    
+    
 }

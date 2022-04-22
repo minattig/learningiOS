@@ -8,7 +8,9 @@
 import UIKit
 
 class NameTableTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
