@@ -1,13 +1,13 @@
 //
-//  TableViewController.swift
+//  ShowerViewController.swift
 //  novoProjeto
 //
-//  Created by Gustavo Minatti on 15/04/22.
+//  Created by Gustavo Minatti on 21/04/22.
 //
 
 import UIKit
 
-class TableViewController: UIViewController {
+class ShowerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
